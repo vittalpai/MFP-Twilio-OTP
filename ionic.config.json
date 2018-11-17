@@ -1,0 +1,7 @@
+{
+  "name": "MFPOtp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

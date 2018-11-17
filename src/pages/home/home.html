@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      IBM Mobile
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding id="home">
+  <form id="mfp-form" name="mfp-form">
+    <ion-item id="mfp-input" name="mfp-input1">
+      <ion-label name="mfp-label">
+        Enter your mobile number
+      </ion-label>
+      <ion-input type="text"  [(ngModel)]="phoneNumber" name="mfp-phoneNumber" placeholder=""></ion-input>
+    </ion-item>
+  </form>
+  <button id="mfp-button" ion-button (click)="register()" color="positive" block>
+    Register
+  </button>
+  <p><font color="red"><pre> {{ result }}</pre></font></p>
+</ion-content>

@@ -20,6 +20,9 @@ export class HomePage {
       phoneNumber : this.phoneNumber,
       countryCode : '1'
     };
+    this.zone.run(() => {
+        this.result = "";
+    });
     WLAuthorizationManager.login(this.securityCheck, credentials).then(() => {
       console.log('-->  Phone Number Registration: Success ');
       this.zone.run(() => {

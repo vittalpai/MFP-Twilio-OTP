@@ -15,12 +15,12 @@
  */
 package com.ibm;
 
-import com.ibm.mfp.security.checks.base.CredentialsValidationSecurityCheckConfig;
+import com.ibm.mfp.security.checks.base.UserAuthenticationSecurityCheckConfig;
 
 import java.util.Properties;
 
 
-public class TwilioConfig extends CredentialsValidationSecurityCheckConfig {
+public class TwilioConfig extends UserAuthenticationSecurityCheckConfig {
 
     public String twilioAPIKey;
 

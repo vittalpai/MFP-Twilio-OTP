@@ -62,6 +62,12 @@ export class MyApp {
             data.countryCode = response.countryCode;
             this.TwilioOTPChallengeHandler.submitChallengeAnswer(data);
           }
+        }, 
+        {
+          text: 'Cancel',
+          handler: data => {
+          this.TwilioOTPChallengeHandler.Cancel();
+          }
         }
       ]
     });

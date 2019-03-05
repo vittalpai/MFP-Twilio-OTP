@@ -9,7 +9,7 @@ import { HomePage } from '../pages/home/home';
 })
 export class MyApp {
   rootPage:any = HomePage;
-  private TwilioOTPChallengeHandler: any
+  private TwilioOTPChallengeHandler: WL.Client.SecurityCheckChallengeHandler;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, renderer: Renderer, public appCtrl: App, public alertCtrl: AlertController) {
     platform.ready().then(() => {
@@ -56,17 +56,18 @@ export class MyApp {
       ],
       buttons: [
         {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: data => {
+            this.TwilioOTPChallengeHandler.cancel();
+          }
+        },
+        {
           text: 'Verify',
           handler: data => {
             data.phoneNumber = response.phoneNumber;
             data.countryCode = response.countryCode;
             this.TwilioOTPChallengeHandler.submitChallengeAnswer(data);
-          }
-        }, 
-        {
-          text: 'Cancel',
-          handler: data => {
-          this.TwilioOTPChallengeHandler.Cancel();
           }
         }
       ]
